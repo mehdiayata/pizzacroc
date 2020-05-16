@@ -1,0 +1,7 @@
+{
+  "name": "pizzacroc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
