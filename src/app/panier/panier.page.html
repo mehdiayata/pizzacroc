@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pizzacro'c
+
+      <td><a [routerLink]="['/panier']"> Panier </a></td>
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+<ion-content padding="true" class="has-header">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Nom </th>
+        <th>Prix</th>
+        <th>Quantité</th>
+        <th>Ajouter au panier</th>
+      </tr>
+    </thead>
+    <tbody>  
+      <div *ngIf="panier">
+      <tr *ngFor="let item of panier ; let index = index">
+        
+        <!--<td> <img src='{{ item.photo }}' alt="Select Image"/></td>-->
+        <td>{{ item.nom }}</td>
+        <td>{{ item.prix }} </td>
+        <td><input type="number"> </td>
+        <td><button (click)="supprimerDuPanier(index)"> X </button> </td>
+      </tr>
+    </div>
+
+    </tbody>
+  </table>
+
+</ion-content>

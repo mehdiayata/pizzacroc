@@ -11,7 +11,28 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'pizza/:id',
+    loadChildren: () => import('./pizza/pizza.module').then( m => m.PizzaPageModule)
+  },
+  {
+    path: 'panier',
+    loadChildren: () => import('./panier/panier.module').then( m => m.PanierPageModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },
+  {
+    path: 'admin-edit/:id',
+    loadChildren: () => import('./admin-edit/admin-edit.module').then( m => m.AdminEditPageModule)
+  },
+  {
+    path: 'admin-create',
+    loadChildren: () => import('./admin-create/admin-create.module').then( m => m.AdminCreatePageModule)
+  },
 ];
+
 
 @NgModule({
   imports: [
@@ -20,3 +41,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

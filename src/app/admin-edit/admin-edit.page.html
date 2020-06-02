@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>admin-edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Nom</ion-label>
+    <ion-input [(ngModel)]="data.nom" placeholder="Entrez nom"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Prix</ion-label>
+    <ion-input [(ngModel)]="data.prix" placeholder="Entrez Prix"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Photo</ion-label>
+    <ion-input [(ngModel)]="data.photo" placeholder="URL Photo"></ion-input>
+  </ion-item>
+
+
+  <ion-button (click)="editPizza()" color="success" size="small">
+    Update
+  </ion-button>
+  <ion-button [routerLink]="[ '/admin']" color="danger" size="small">
+    Cancel
+  </ion-button>
+</ion-content>

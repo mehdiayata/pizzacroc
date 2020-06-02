@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Prix</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of allPizza">
+          
+          <td>{{ item.nom }}</td>
+          <td>{{ item.prix }} </td>
+          <td><button routerLink='/admin-edit/{{item.id}}'> Edit </button></td>
+          <td><button (click)="deletePizza(item)"> Supprimer </button></td>
+        </tr>
+        
+      </tbody>
+      
+    </table>
+    
+  <ion-button [routerLink]="['/admin-create']"> CREER PIZZA </ion-button>
+  
+</ion-content>
