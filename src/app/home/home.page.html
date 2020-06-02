@@ -41,7 +41,8 @@
         <h3>{{ item.nom }} | {{item.prix}} €</h3>
         <img src='{{ item.photo }}' alt="Photo Pizza" />
         <p><ion-button color="medium" (click)="goPizza(item.id)"> Détails </ion-button> 
-         <ion-button color="dark" (click)="ajouterAuPanier(item.id)"> Ajouter aux paniers</ion-button></p>
+         <ion-button color="dark" (click)="ajouterAuPanier(item.id)"> Ajouter aux paniers</ion-button>
+        </p>
       </ion-col>
     </ion-row>
   </ion-grid>

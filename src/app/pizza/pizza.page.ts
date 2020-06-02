@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { PanierService } from '../services/panier.service';
 
 @Component({
   selector: 'app-pizza',
@@ -13,7 +14,7 @@ export class PizzaPage  {
   detailIngredient : any;
   id : string;
 
-  constructor(public apiPizza : ApiService, private route: ActivatedRoute) {
+  constructor(public apiPizza : ApiService, private route: ActivatedRoute, public panierService : PanierService) {
     this.id = this.route.snapshot.paramMap.get('id');
 
     this.detailPizza = {
@@ -51,6 +52,12 @@ export class PizzaPage  {
       this.detailIngredient = response;
       
     });
+  }
+
+  
+  // Appel le service panier et la méthode ajouterAuPanier
+  ajouterAuPanier(id) {
+    this.panierService.ajouterAuPanier(id);
   }
 
 

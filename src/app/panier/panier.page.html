@@ -2,19 +2,25 @@
   <ion-toolbar>
     <ion-title>
       Pizzacro'c
-
-      <td><a [routerLink]="['/panier']"> Panier </a></td>
     </ion-title>
 
-  </ion-toolbar>
-</ion-header>
+    <ion-button routerLink="/home">
+      <ion-icon name="pizza" slot="start"></ion-icon>
+      <ion-label>Accueil</ion-label>
+    </ion-button>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-button routerLink="/panier">
+      <ion-icon name="basket" slot="start"></ion-icon>
+      <ion-label>Panier</ion-label>
+    </ion-button>
+
+    <ion-button routerLink="/admin">
+      <ion-icon name="construct" slot="start"></ion-icon>
+      <ion-label>Administration</ion-label>
+    </ion-button>
+  </ion-toolbar>
+
+</ion-header>
 
 
 
@@ -29,18 +35,23 @@
         <th>Ajouter au panier</th>
       </tr>
     </thead>
-    <tbody>  
+    <tbody>
       <div *ngIf="panier">
-      <tr *ngFor="let item of panier ; let index = index">
-        
-        <!--<td> <img src='{{ item.photo }}' alt="Select Image"/></td>-->
-        <td>{{ item.nom }}</td>
-        <td>{{ item.prix }} </td>
-        <td><input type="number"> </td>
-        <td><button (click)="supprimerDuPanier(index)"> X </button> </td>
-      </tr>
-    </div>
+        <tr *ngFor="let item of panier ; let index = index">
 
+          <td>{{ item.nom }}</td>
+          <td>{{ item.prix }} </td>
+
+          <td><input type="number" id="quantite" name="quantite" min="0" max="100"></td>
+          <td><button color="primary" (click)="supprimerDuPanier(index)"> X </button> </td>
+        </tr>
+      </div>
+
+      <div class="valider_commande">
+        
+        <td><button color="primary" (click)="validerCommande()">Valider commande </button> </td>
+
+      </div>
     </tbody>
   </table>
 

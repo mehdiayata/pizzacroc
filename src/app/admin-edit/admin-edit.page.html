@@ -1,7 +1,25 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>admin-edit</ion-title>
+    <ion-title>
+      Pizzacro'c
+    </ion-title>
+    
+  <ion-button routerLink="/home">
+    <ion-icon name="pizza" slot="start"></ion-icon>
+    <ion-label>Accueil</ion-label>
+  </ion-button>
+    
+  <ion-button routerLink="/panier">
+    <ion-icon name="basket" slot="start"></ion-icon>
+    <ion-label>Panier</ion-label>
+  </ion-button>
+  
+  <ion-button routerLink="/admin">
+    <ion-icon name="construct" slot="start"></ion-icon>
+    <ion-label>Administration</ion-label>
+  </ion-button>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content class="ion-padding">
